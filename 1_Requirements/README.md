@@ -1,7 +1,14 @@
 # Requirements
 
-* Capture all the requirements wrt system, module, interface, integration, testing, Functional and Non-functional
-* Captures Basic Planning of the project through - Sample Gantt Chart attached
+## Introduction
 
-* Tools: MS Excel, MS word or Similar
+## Research
+
+## Cost and Features and Timeline
+
+## Defining Our System
+
+## SWOT ANALYSIS
+
+## 4W's and 1'H
 
