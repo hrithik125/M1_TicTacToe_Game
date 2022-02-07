@@ -4,7 +4,7 @@
 Tic-tac-toe also known as Xs and Os is a game played between two players which is normally played with pen and paper, where both players take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. It is a solved game, with a forced draw assuming best play from both players. 
 
 ## Introduction
-
+###Research
 The game seems to have originated from Egypt, historians aren’t exactly sure of the time however. Though as simple as the game may seem, there are over 255,000 different outcomes of the game! The name "tic-tac-toe" may ultimately derive from "tick-tack", the name of an old version of backgammon first described in 1558. The first print reference to a game called "tick-tack-toe" occurred in 1884, but referred to "a children's game played on a slate, consisting in trying with the eyes shut to bring the pencil down on one of the numbers of a set, the number hit being scored".
 
 ### Key Advantages
