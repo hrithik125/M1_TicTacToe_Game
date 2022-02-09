@@ -2,7 +2,7 @@
 
 
 /* Modify these two lines according to the project */
-#include <tictactoe.h>
+#include "tictactoe.h"
 #define PROJECT_NAME    "Tictactoe"
 
 /* Prototypes for all the test functions */
