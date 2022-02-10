@@ -23,6 +23,8 @@ int checkforwin()
         return -1;
 }
 
+
+
 void board()
 {
     int i;
