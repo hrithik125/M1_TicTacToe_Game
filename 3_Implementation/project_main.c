@@ -1,10 +1,10 @@
-#include"tictactoe.h"
-char x,o;
-char a[9]={'1','2','3','4','5','6','7','8','9'};
-char u1[50],u2[50];
-void board();
-void rules();
-int checkforwin();
+#include"tic.h"
+
+#include"tic.c"
+// char x,o;
+// char a[9]={'1','2','3','4','5','6','7','8','9'};
+// char u1[50],u2[50];
+
 
 int main()
 {
@@ -18,9 +18,13 @@ int main()
     char start,dec;
     int s;
     rules();
-    printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\n");
+    printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\n Type 3 to EXIT\n");
     scanf("%d",&s);
-    if(s==1)
+    if (s==3)
+    {
+        exit(0);
+    }
+    else if(s==1)
     {
     read:
         p=fopen("score.txt","a+");
@@ -45,13 +49,22 @@ int main()
 
     do
     {
-
+       // xy:
         player=((player%2)?1:2);
         if(player==1)
         printf("%s Type any digit from 1-9 to fill your response:- ",u1);
         else
             printf("%s Type any digit from 1-9 to fill your response:- ",u2);
+        xy:
         scanf("%d",&choice);
+        // if(choice != 1 && choice != 2 &&  choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7 && choice != 8 && choice != 9)
+        // {
+        //     printf("Enter valid input");
+        //     //goto xy;
+        // }
+
+        if(choice>0 && choice<10)
+        {
         symbol=((player==1)?x:o);
         if(choice==1 && a[0]=='1')
             a[0]=symbol;
@@ -71,12 +84,21 @@ int main()
             a[7]=symbol;
         else if(choice==9 && a[8]=='9')
             a[8]=symbol;
-        else
-            {printf("Wrong Selection\n");player--;}
+        // else if(choice>='a' && choice<='z' || choice>='A' && choice<='Z' )
+        //       printf("Enter valid input\n");  
 
+        else{
+            printf("Wrong Selection\n");player--;
+            goto xy;
+        }
         score=checkforwin();
         player++;
         board();
+        }
+        else{
+            printf("Enter valid input\n");
+            choice = 0;
+        }
     }while(score == -1);
 
 
@@ -86,18 +108,18 @@ int main()
 
         if(player==2)
         {printf("\n\nPlayer1 %s Wins!\n\n",u1);fprintf(p,"\t%s",u1);
-        getch();}
+        getchar();}
         else
             {printf("\n\nPlayer2 %s Wins!\n\n",u2);fprintf(p,"\t%s",u2);
-        getch();
+        getchar();
             }
         fclose(p);
     }
     else
         printf("\n\nGame Draws!\n\n");fprintf(p,"\t%s","DRAW");
-        getch();
+        getchar();
     }
-    if(s==2)
+    else if(s==2)
     {
         int cho;
         system("cls");
@@ -115,11 +137,11 @@ int main()
         if(cho==1)
             goto read;
         else
-            getch();
+            getchar();
     }
     else
     {
         printf("\n\nShould have typed 1 to play the game!\nHope to see you back soon!\n\n");
-        getch();
+        getchar();
     }
 }
