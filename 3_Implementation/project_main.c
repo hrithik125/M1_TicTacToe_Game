@@ -1,112 +1,125 @@
-#include "tictactoe.h"
+#include"tictactoe.h"
+char x,o;
+char a[9]={'1','2','3','4','5','6','7','8','9'};
+char u1[50],u2[50];
+void board();
+void rules();
+int checkforwin();
 
-/* Status of the operation requested */
-#define VALID   (1)
-#define INVALID (0)
-
-/* Calculator operation requested by user*/
-unsigned int calculator_operation = 0;
-
-/* Operands on which calculation is performed */
-int calculator_operand1 = 0;
-int calculator_operand2 = 0;
-
-/* Valid operations */
-enum operations{ ADD=1, SUBTRACT, MULTIPLY, DIVIDE, EXIT };
-
-/* Display the menu of operations supported */
-void calculator_menu(void);
-/* Verifies the requested operations validity */
-int valid_operation(int operation);
-
-
-/* Start of the application */
-int main(int argc, char *argv[])
+int main()
 {
-    printf("\n****Calculator****\n");
-    while(1)
+    FILE *p;
+    p=fopen("score.txt","a+");
+    fclose(p);
+    system("color 0D");
+    int player=1;
+    int choice,score=-1;
+    char symbol,re;
+    char start,dec;
+    int s;
+    rules();
+    printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\n");
+    scanf("%d",&s);
+    if(s==1)
     {
-        calculator_menu();
+    read:
+        p=fopen("score.txt","a+");
+    printf("\nEnter name of player1: ");
+    scanf("%s",u1);
+    fprintf(p,"\n%s",u1);
+    printf("Enter name of player2: ");
+    scanf("%s",u2);
+    fprintf(p,"\t%s",u2);
+    fclose(p);
+    if(!strcmp(u1,u2))
+    {
+        printf("Enter names of different players!\n\n");
+        goto read;
     }
-}
+    else
+        decision();
 
-void calculator_menu(void)
-{
-    printf("\nAvailable Operations\n");
-    printf("\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exit");
-    printf("\n\tEnter your choice\n");
-   
-     __fpurge(stdin);
-    scanf("%d", &calculator_operation);
 
-    if(EXIT == calculator_operation)
+    system("color 71");
+    board();
+
+    do
     {
-        printf("\nThank you. Exiting the Application\n");
-        exit(0);
+
+        player=((player%2)?1:2);
+        if(player==1)
+        printf("%s Type any digit from 1-9 to fill your response:- ",u1);
+        else
+            printf("%s Type any digit from 1-9 to fill your response:- ",u2);
+        scanf("%d",&choice);
+        symbol=((player==1)?x:o);
+        if(choice==1 && a[0]=='1')
+            a[0]=symbol;
+        else if(choice==2 && a[1]=='2')
+            a[1]=symbol;
+        else if(choice==3 && a[2]=='3')
+            a[2]=symbol;
+        else if(choice==4 && a[3]=='4')
+            a[3]=symbol;
+        else if(choice==5 && a[4]=='5')
+            a[4]=symbol;
+        else if(choice==6 && a[5]=='6')
+            a[5]=symbol;
+        else if(choice==7 && a[6]=='7')
+            a[6]=symbol;
+        else if(choice==8 && a[7]=='8')
+            a[7]=symbol;
+        else if(choice==9 && a[8]=='9')
+            a[8]=symbol;
+        else
+            {printf("Wrong Selection\n");player--;}
+
+        score=checkforwin();
+        player++;
+        board();
+    }while(score == -1);
+
+
+    p=fopen("score.txt","a+");
+    if(score==1)
+    {
+
+        if(player==2)
+        {printf("\n\nPlayer1 %s Wins!\n\n",u1);fprintf(p,"\t%s",u1);
+        getch();}
+        else
+            {printf("\n\nPlayer2 %s Wins!\n\n",u2);fprintf(p,"\t%s",u2);
+        getch();
+            }
+        fclose(p);
     }
-
-    if(INVALID != valid_operation(calculator_operation))
+    else
+        printf("\n\nGame Draws!\n\n");fprintf(p,"\t%s","DRAW");
+        getch();
+    }
+    if(s==2)
     {
-        printf("\n\tEnter your Numbers with space between them\n");
-        __fpurge(stdin);
-        scanf("%d %d", &calculator_operand1, &calculator_operand2);
+        int cho;
+        system("cls");
+        printf("\n\n");
+        printf("\tLEADERBOARD\n\n");
+        char c;
+        p=fopen("score.txt","r");
+        while((c=getc(p))!=EOF)
+        {
+            printf("%c",c);
+        }
+        fclose(p);
+        printf("\n\nPress 1 to start the game:- ");
+        scanf("%d",&cho);
+        if(cho==1)
+            goto read;
+        else
+            getch();
     }
     else
     {
-        printf("\n\t---Wrong choice---\nEnter to continue\n");
-        __fpurge(stdin);
-        getchar();
-        return;
-        
+        printf("\n\nShould have typed 1 to play the game!\nHope to see you back soon!\n\n");
+        getch();
     }
-    switch(calculator_operation)
-    {
-        case ADD:
-            printf("\n\t%d + %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            add(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case SUBTRACT:
-            printf("\n\t%d - %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            subtract(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case MULTIPLY:
-            printf("\n\t%d * %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            multiply(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case DIVIDE:
-            printf("\n\t%d / %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            divide(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case 5:
-            exit(0);
-            break;
-        default:
-            printf("\n\t---It should never come here---\n");
-    }
-}
-
-int valid_operation(int operation)
-{
-    /* Check if the operation is a valid operation */
-    return ((ADD <= operation) && (EXIT >= operation)) ? VALID: INVALID;
 }
