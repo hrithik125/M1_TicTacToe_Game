@@ -60,7 +60,7 @@ int main()
     char start,dec;
     int s;
     rules();
-    printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\n Type 3 to EXIT\n");
+    printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\nType 3 to EXIT\n");
     scanf("%d",&s);
     if (s==3)
     {
@@ -167,6 +167,7 @@ int main()
         system("cls");
         printf("\n\n");
         printf("\tLEADERBOARD\n\n");
+        printf("P1\tP2   Result\n");
         char c;
         p=fopen("score.txt","r");
         while((c=getc(p))!=EOF)
@@ -183,7 +184,7 @@ int main()
     }
     else
     {
-        printf("\n\nShould have typed 1 to play the game!\nHope to see you back soon!\n\n");
+        printf("\n\nType 1 to play the game!\n\n");
         getchar();
     }
 }
