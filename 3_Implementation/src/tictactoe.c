@@ -1,6 +1,5 @@
 #include"tictactoe.h"
 
-// char ad[9]={'1','2','3','4','5','6','7','8','9'};
 
 
 void rules()
@@ -24,18 +23,20 @@ int decision()
 {
     char dec;
         deci:
-        printf("\n\nPlayer1 %s choose the X or 0:",u1);
+        printf("\n\nPlayer1 %s choose the X or O:",u1);
         dec=getchar();
         scanf("%c",&dec);
         {
             if(dec=='X' || dec=='x')
             {
                 x='X';
-                o='0';
+                //o='0';
+                o='O';
             }
             else if(dec=='0' || dec=='O' || dec=='o')
             {
-                x='0';
+                //x='0';
+                x='O';
                 o='X';
             }
             else
