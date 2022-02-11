@@ -13,3 +13,6 @@
 ## Build Check
 
 [![Build-linux](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/Build-linux.yml/badge.svg)](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/Build-linux.yml)
+
+## Dynamic Check
+[![CodeQuality Dynamic Code Analysis Valgrind](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/CodeQuality_Dynamic.yml/badge.svg)](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/CodeQuality_Dynamic.yml)
