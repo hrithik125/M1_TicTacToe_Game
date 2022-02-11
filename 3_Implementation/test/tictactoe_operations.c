@@ -8,9 +8,13 @@
 /* Prototypes for all the test functions */
 
 /* Required by the unity test framework */
-void setUp(){}
+void setUp(){
+
+}
 /* Required by the unity test framework */
-void tearDown(){}
+void tearDown(){
+  
+}
 
 /* Start of the application test */
 int main()

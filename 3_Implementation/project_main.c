@@ -28,7 +28,7 @@ int checkforwin()
 
 void board()
 {
-    int i;
+    //int i;
 
     system("cls");
     printf("\tTic-Tac-Toe\n\n");
@@ -56,8 +56,8 @@ int main()
     system("color 0D");
     int player=1;
     int choice,score=-1;
-    char symbol,re;
-    char start,dec;
+    char symbol; //,re;
+    //char start,dec;
     int s;
     rules();
     printf("\n\nType 1 to start the game:-\nType 2 to view leader board:-\nType 3 to EXIT\n");
