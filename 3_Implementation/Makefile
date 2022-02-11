@@ -9,15 +9,15 @@ SRC = project_main.c\
 src/tictactoe.c
 
 # # All test source files
-# TEST_SRC = src/calculator_operations.c\
-# test/test_calculator_operations.c\
-# unity/unity.c\
+TEST_SRC =src/tictactoe.c\
+test/test_tictactoe.c\
+unity/unity.c\
 
-# TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
 # All include folders with header files
 INC	= -Iinc\
-# -Iunity\
+ -Iunity\
 #To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
 ifdef OS
    RM = del /q
@@ -32,7 +32,7 @@ else
 endif
 #Library Inlcudes
 #INCLUDE_LIBS = 
-INCLUDE_LIBS = -lcunit
+#INCLUDE_LIBS = -lcunit
 
 # Project Output name
 PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
@@ -65,7 +65,7 @@ test:$(BUILD)
 analyze: test memcheck staticcheck coverage sanitize_check
 
 staticcheck:
-	cppcheck --enable=all -iunity .
+	cppcheck --enable=all -Iunity .
 
 memcheck:
 	valgrind ./$(TEST_OUTPUT)

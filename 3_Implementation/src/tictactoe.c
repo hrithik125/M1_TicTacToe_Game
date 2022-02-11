@@ -46,3 +46,20 @@ int decision()
             }
         }
 }
+
+
+
+
+
+int check_draw(int turn)
+{
+    if(turn > 9)
+    {
+        //gotoxy(30,20);
+        //textcolor(128+RED);
+        printf("\n\n Game Draw");
+        getchar();
+        exit(0);
+    }
+    return 1;
+}
