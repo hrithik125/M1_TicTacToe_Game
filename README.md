@@ -17,6 +17,6 @@
 ## Dynamic Check
 [![CodeQuality Dynamic Code Analysis Valgrind](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/CodeQuality_Dynamic.yml/badge.svg)](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/CodeQuality_Dynamic.yml)
 
-##Unit Test
+## Unit Test
 
 [![Unit Testing - Unity](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/unity.yml/badge.svg)](https://github.com/hrithik125/M1_TicTacToe_Game/actions/workflows/unity.yml)
