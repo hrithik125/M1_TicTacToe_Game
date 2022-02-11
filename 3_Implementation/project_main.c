@@ -1,9 +1,51 @@
-#include"tic.h"
+#include"tictactoe.h"
 
-#include"tic.c"
-// char x,o;
-// char a[9]={'1','2','3','4','5','6','7','8','9'};
-// char u1[50],u2[50];
+char ad[9]={'1','2','3','4','5','6','7','8','9'};
+
+int checkforwin()
+{
+    if(ad[0]==ad[1] && ad[1]==ad[2])
+        return 1;
+    else if(ad[3]==ad[4] && ad[4]==ad[5])
+        return 1;
+    else if(ad[6]==ad[7] && ad[7]==ad[8])
+        return 1;
+    else if(ad[0]==ad[3] && ad[3]==ad[6])
+        return 1;
+    else if(ad[1]==ad[4] && ad[4]==ad[7])
+        return 1;
+    else if(ad[2]==ad[5] && ad[5]==ad[8])
+        return 1;
+    else if(ad[0]==ad[4] && ad[4]==ad[8])
+        return 1;
+    else if(ad[2]==ad[4] && ad[4]==ad[6])
+        return 1;
+    else if(ad[0]!='1' && ad[1]!='2' && ad[2]!='3' && ad[3]!='4' && ad[4]!='5' && ad[5]!='6' && ad[6]!='7' && ad[7]!='8' && ad[8]!='9')
+        return 0;
+    else
+        return -1;
+}
+
+void board()
+{
+    int i;
+
+    system("cls");
+    printf("\tTic-Tac-Toe\n\n");
+        printf("\n\n");
+        printf("%s:- (%c)\n%s:-  (%c)\n\n\n",u1,x,u2,o);
+
+        printf("  %c |  %c | %c\n",ad[0],ad[1],ad[2]);
+        printf("    |    |    \n");
+        printf("----|----|----\n");
+        printf("    |    |    \n");
+        printf("  %c |  %c | %c\n",ad[3],ad[4],ad[5]);
+        printf("    |    |    \n");
+        printf("----|----|----\n");
+        printf("  %c |  %c | %c\n",ad[6],ad[7],ad[8]);
+        printf("    |    |    \n");
+    }
+
 
 
 int main()
@@ -66,24 +108,24 @@ int main()
         if(choice>0 && choice<10)
         {
         symbol=((player==1)?x:o);
-        if(choice==1 && a[0]=='1')
-            a[0]=symbol;
-        else if(choice==2 && a[1]=='2')
-            a[1]=symbol;
-        else if(choice==3 && a[2]=='3')
-            a[2]=symbol;
-        else if(choice==4 && a[3]=='4')
-            a[3]=symbol;
-        else if(choice==5 && a[4]=='5')
-            a[4]=symbol;
-        else if(choice==6 && a[5]=='6')
-            a[5]=symbol;
-        else if(choice==7 && a[6]=='7')
-            a[6]=symbol;
-        else if(choice==8 && a[7]=='8')
-            a[7]=symbol;
-        else if(choice==9 && a[8]=='9')
-            a[8]=symbol;
+        if(choice==1 && ad[0]=='1')
+            ad[0]=symbol;
+        else if(choice==2 && ad[1]=='2')
+            ad[1]=symbol;
+        else if(choice==3 && ad[2]=='3')
+            ad[2]=symbol;
+        else if(choice==4 && ad[3]=='4')
+            ad[3]=symbol;
+        else if(choice==5 && ad[4]=='5')
+            ad[4]=symbol;
+        else if(choice==6 && ad[5]=='6')
+            ad[5]=symbol;
+        else if(choice==7 && ad[6]=='7')
+            ad[6]=symbol;
+        else if(choice==8 && ad[7]=='8')
+            ad[7]=symbol;
+        else if(choice==9 && ad[8]=='9')
+            ad[8]=symbol;
         // else if(choice>='a' && choice<='z' || choice>='A' && choice<='Z' )
         //       printf("Enter valid input\n");  
 

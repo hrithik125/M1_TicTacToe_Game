@@ -1,23 +1,23 @@
 # Name of the project
-PROJECT_NAME = Calculator
+PROJECT_NAME = TicTacToe
 
 # Output directory
 BUILD = build
 
 # All source code files
 SRC = project_main.c\
-src/calculator_operations.c
+src/tictactoe.c
 
-# All test source files
-TEST_SRC = src/calculator_operations.c\
-test/test_calculator_operations.c\
-unity/unity.c\
+# # All test source files
+# TEST_SRC = src/calculator_operations.c\
+# test/test_calculator_operations.c\
+# unity/unity.c\
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+# TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
 # All include folders with header files
 INC	= -Iinc\
--Iunity\
+# -Iunity\
 
 #Library Inlcudes
 #INCLUDE_LIBS = 
@@ -46,27 +46,27 @@ run:$(PROJECT_NAME)
 doc:
 	make -C ./documentation
 
-# Build and run the unit tests
-test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
-	./$(TEST_OUTPUT)
+# # Build and run the unit tests
+# test:$(BUILD)
+# 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
+# 	./$(TEST_OUTPUT)
 
-analyze: test memcheck staticcheck coverage sanitize_check
+# analyze: test memcheck staticcheck coverage sanitize_check
 
-staticcheck:
-	cppcheck --enable=all -iunity .
+# staticcheck:
+# 	cppcheck --enable=all -iunity .
 
-memcheck:
-	valgrind ./$(TEST_OUTPUT)
+# memcheck:
+# 	valgrind ./$(TEST_OUTPUT)
 
-sanitize_check:
-	gcc -fsanitize=address -fno-omit-frame-pointer $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
-	./$(TEST_OUTPUT)
+# sanitize_check:
+# 	gcc -fsanitize=address -fno-omit-frame-pointer $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
+# 	./$(TEST_OUTPUT)
 
-coverage:$(TEST_SRC)
-	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
-	./$(TEST_OUTPUT)
-	gcov -a calculator_operations.c
+# coverage:$(TEST_SRC)
+# 	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
+# 	./$(TEST_OUTPUT)
+# 	gcov -a calculator_operations.c
 
 # Remove all the built files, invoke by `make clean`
 clean:
