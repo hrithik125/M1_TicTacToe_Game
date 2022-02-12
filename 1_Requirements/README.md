@@ -60,6 +60,7 @@ This game is for recreational purposes.
 Does not consume a lot of time.
 ### When:
 Played with acquaintances, colleagues to relax.
+
 ### Where:
 Various sites on the internet provide the game.
 A simple [Google search](https://www.google.com/search?client=firefox-b-d&q=tictactoe) gives a ready game to play.
