@@ -53,8 +53,6 @@ int draw(int num)
 {
     if(num > 9)
     {
-        //gotoxy(30,20);
-        //textcolor(128+RED);
         printf("\n\n Game is Draw");
         getchar();
         exit(0);
