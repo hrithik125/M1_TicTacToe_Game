@@ -6,9 +6,9 @@ void rules()
     printf("\tTic-Tac-Toe\n\n");
     
     printf("Rules:-\n");
-    printf("\n1:Each player will be entering the number to put respective X or O in the desired position");
-    printf("\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \n  vertically will be declared as the winner");
-    printf("\n\nEnjoy the game! Be a Winner!\n\n");
+    printf("\n1:Player can enter the number 1-9 to put respective X or O");
+    printf("\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \n  vertically will be the winner");
+    printf("\n\nHope you'll enjoy the game\n\n");
 
     char link='n';
     if(link=='y' || link=='Y')
