@@ -38,8 +38,8 @@ TicTacToe is a game mainly played by kids. It has noticeable advantages for the 
 ### Strengths
 * Develops planning skills.
 * Visual tracking and perceptual skills.
-* Predicting the ooutcome.
-* Rules are simple tp understand.
+* Predicting the outcome.
+* Rules are simple to understand.
 ### Weaknesses
 * Game results in draw a number of times.
 * Input from a single keyboard between 2 players.
@@ -61,7 +61,7 @@ Does not consume a lot of time.
 ### When:
 Played with acquaintances, colleagues to relax.
 ### Where:
-Various sites ont the internet provide the game.
+Various sites on the internet provide the game.
 A simple [Google search](https://www.google.com/search?client=firefox-b-d&q=tictactoe) gives a ready game to play.
 ### How:
-It can be implemented using a strategy. The strategy is to select the best possible postition by considering all the possible moves of the competition and making the move accordingly.
+It can be implemented using a strategy. The strategy is to select the best possible position by considering all the possible moves of the competition and making the move accordingly.
