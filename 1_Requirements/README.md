@@ -1,4 +1,3 @@
-
 # Description
 # Requirements
 Tic-tac-toe also known as Xs and Os is a game played between two players which is normally played with pen and paper, where both players take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. It is a solved game, with a forced draw assuming best play from both players. 
@@ -31,7 +30,7 @@ TicTacToe is a game mainly played by kids. It has noticeable advantages for the 
 |HLR2|LLR2|If the player hits '2', they'll be able to view the leaderboard.|
 |HLR3|LLR3|After hitting '1', players will be prompted to enter thier names.|
 |HLR4|LLR4|Player will choose between 'X' or 'O' and choose it's place in 3x3 matrix.|
-|HLR5|LLR5|Player who gets a combination of 3 same characters either diagonal or horizontally or  vertically will be declared as the winner|
+|HLR5|LLR5|Player who gets a combination of 3 same characters either diagonal or horizontally or  vertically will be declared as the winner.|
 
 
 
