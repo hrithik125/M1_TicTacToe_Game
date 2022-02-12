@@ -49,13 +49,13 @@ int decision()
 
 
 
-int check_draw(int turn)
+int draw(int num)
 {
-    if(turn > 9)
+    if(num > 9)
     {
         //gotoxy(30,20);
         //textcolor(128+RED);
-        printf("\n\n Game Draw");
+        printf("\n\n Game is Draw");
         getchar();
         exit(0);
     }

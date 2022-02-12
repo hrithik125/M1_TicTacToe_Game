@@ -14,8 +14,8 @@ void setUp(){}
 /* Required by the unity test framework */
 void tearDown(){}
 
-void test_check_draw(){
-  TEST_ASSERT_EQUAL(1, check_draw(6));
+void test_draw(){
+  TEST_ASSERT_EQUAL(1, draw(8));
 
 //TEST_ASSERT_EQUAL(2, check_draw(100));
 }
@@ -28,7 +28,7 @@ int main()
   UNITY_BEGIN();
 
 /* Run Test functions */
-  RUN_TEST(test_check_draw);
+  RUN_TEST(test_draw);
   
 
   /* Close the Unity Test Framework */
